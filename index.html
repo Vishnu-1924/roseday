@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rose Day Surprise</title>
+
+<!-- Lottie -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle, #ffe6ee, #ffc0d9);
+  text-align:center;
+}
+
+/* ---------- MUSIC ---------- */
+audio{ display:none; }
+
+/* ---------- CHARACTERS ---------- */
+.characters{
+  display:flex;
+  justify-content:space-around;
+  margin-top:20px;
+}
+
+/* ---------- CHAT ---------- */
+.chat-box{
+  width:85%;
+  max-width:420px;
+  margin:20px auto;
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 0 15px pink;
+  text-align:left;
+}
+.msg{
+  opacity:0;
+  animation:show 1s forwards;
+}
+.m1{animation-delay:1s}
+.m2{animation-delay:2.5s}
+.m3{animation-delay:4s}
+.m4{animation-delay:5.5s}
+.m5{animation-delay:7s}
+@keyframes show{to{opacity:1}}
+
+/* ---------- CARDS ---------- */
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin:30px 10px;
+}
+
+.card{
+  width:260px;
+  height:160px;
+  perspective:1000px;
+  cursor:pointer;
+}
+
+.card-inner{
+  width:100%;
+  height:100%;
+  position:relative;
+  transition:transform 0.8s;
+  transform-style:preserve-3d;
+}
+
+.card.open .card-inner{
+  transform:rotateY(180deg);
+}
+
+.card-front, .card-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:20px;
+  box-shadow:0 0 15px pink;
+  padding:15px;
+}
+
+.card-front{
+  background:#ff4d6d;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.card-back{
+  background:white;
+  color:#333;
+  transform:rotateY(180deg);
+  text-align:left;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌹 Rose Day Surprise 🌹</h1>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- CHARACTERS -->
+<div class="characters">
+  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_kkflmtur.json"
+    style="width:150px;height:150px;" loop autoplay></lottie-player>
+
+  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_w51pcehl.json"
+    style="width:150px;height:150px;" loop autoplay></lottie-player>
+</div>
+
+<!-- CHAT -->
+<div class="chat-box">
+  <div class="msg m1">Hey… it’s Feb 7th</div>
+  <div class="msg m2">Confused? Question mark?</div>
+  <div class="msg m3">It’s a special day</div>
+  <div class="msg m4">Yeah… exciting</div>
+  <div class="msg m5">Happy Rose Day 🤍</div>
+</div>
+
+<h2>Tap each card 💌</h2>
+
+<!-- CARDS -->
+<div class="cards">
+
+  <!-- CARD 1 -->
+  <div class="card" onclick="this.classList.toggle('open')">
+    <div class="card-inner">
+      <div class="card-front">📩 Open Message</div>
+      <div class="card-back">
+        🌹 Happy Rose Day 🌹<br><br>
+        Cherry papaluuu 😄<br>
+        We completed Sem 1 🎓<br>
+        Be strong & safe 💪
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card" onclick="this.classList.toggle('open')">
+    <div class="card-inner">
+      <div class="card-front">📩 Open Message</div>
+      <div class="card-back">
+        When I said <b>I love you</b>,
+        I meant it deeply.<br><br>
+        I’m fighting my own battles,
+        but I never stopped caring 🤍
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card" onclick="this.classList.toggle('open')">
+    <div class="card-inner">
+      <div class="card-front">📩 Open Message</div>
+      <div class="card-back">
+        If there’s any problem,
+        just call me okay?<br><br>
+        You’ll always have
+        your buddy 😝
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
